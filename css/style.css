@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#000, #333);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'lato', sans-serif;
+}
+
+.glow {
+  position: relative;
+  width: 350px;
+  height: 550px;
+  background: -webkit-gradient (
+    linear,
+    left bottom,
+    left top,
+    from (#000000),
+    to (#333)
+  );
+  background: -webkit-linear-gradient(bottom, #000000, #333);
+  background: -moz-linear-gradient(bottom, #000000, #333);
+  background: -o-linear-gradient(bottom, #000000, #333);
+  background: linear-gradient(0deg, #000000, #333);
+  -webkit-border-radius: 20px;
+  -moz-border-radius:20px;
+  border-radius: 20px;
+}
+ 
+.glow::before, 
+.glow::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: -webkit-linear-gradient(
+    45deg,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000,
+    #ff5f1f,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000,
+    #ff5f1f,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000
+  );
+  background: -o-linear-gradient(
+    45deg,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000,
+    #ff5f1f,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000
+  );
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000,
+    #ff5f1f,
+    #ff0000,
+    #0000ff,
+    #800080,
+    #008000  
+  );
+  -webkit-background-size: 400% 400%;
+  -moz-background-size: 400%;
+  -o-background-size: 400%;
+  background-size: 400%;
+  max-width: -webkit-calc(350px + 4px);
+  max-width: -moz-calc(350px + 4px);
+  max-width: calc(350px + 4px);
+  max-height: -webkit-calc(550px + 4px);
+  max-height: -moz-calc(550px + 4px);
+  max-height: calc(550px + 4px);
+  width: -webkit-calc(350px + 4px);
+  width: -moz-calc(350px + 4px);
+  width: calc(350px + 4px);
+  height: -webkit-calc(550px + 4px);
+  height: -moz-calc(550px + 4px);
+  height: calc(550px + 4px);
+  z-index: -1;
+  -webkit-animation: animate 20s linear infinite;
+  -moz-animation: animate 20s linear infinite;
+  -o-animation: animate 20s linear infinite;
+  animation: animate 20s linear infinite;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.glow::after {
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
+
+.glow.colors::before, 
+.glow.colors::after {
+  display: block;
+}
+
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.audio-player {
+  width: 350px;
+  height: 550px;
+  border-radius: 20px;
+  padding: 15px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.logo {
+  width: 10%;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  /*background: #181b24;*/
+}
+
+.cover-photo {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 250px; 
+  margin: auto;
+  background: url('../img/bulls.jpg') no-repeat center center/cover;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.audio-text {
+  margin-top: 15px;
+}
+
+.song-name,
+.artist-name {
+  text-align: center;
+  text-transform: capitalize;
+}
+ 
+.song-name {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.artist-name {
+  font-size: 20px;
+}
+ 
+.seek-slider { 
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+}
+ 
+.seek-bar {  
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  background: #CCC;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1px;
+  height: 20px;
+  background: #000;
+  box-shadow: -400px 0 0 400px #7cfc00;
+}
+
+.current-time,
+.song-duration {
+  font-size: 14px;
+}
+
+.song-duration {
+  position: absolute;
+  right: 0;
+}
+
+.controls {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.play-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   transition: 0.2s ease;
+}
+
+.play-btn span {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 30px;
+  border-radius: 2px;
+  background: #333;
+  transition: .5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2) {
+  left: 55%;
+  transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2) {
+  transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+  width: 35%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause {
+  animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0;
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   transition: 0.2s ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

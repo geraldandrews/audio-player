@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Audio Player</title>
+</head>
+<body>
+    <audio src="" id="audio"></audio>
+ 
+    <div class="glow">
+        <img src="img/ga.png" class="logo" alt="brand logo">
+
+        <div class="audio-player">
+          <div class="cover-photo"></div>
+
+          <div class="audio-text">
+            <h1 class="song-name">chicago bulls intro</h1>
+            <p class="artist-name">chicago bulls</p>
+        </div>
+
+        <div class="seek-slider">
+            <input type="range" value="0" class="seek-bar">
+            <span class="current-time">00:00</span> 
+            <span class="song-duration">00:00</span>
+        </div>
+
+        <div class="controls">
+            <button class="btn previous-btn"><img src="img/pre.png" alt="previous button"></button>
+            <button class="play-btn pause">
+                <span></span>
+                <span></span>
+            </button>
+            <button class="btn next-btn"><img src="img/nxt.png" alt="next button"></button>
+        </div>
+    </div>
+    
+<script src="js/data.js"></script>
+<script src="js/script.js"></script> 
+</body>
+</html>
