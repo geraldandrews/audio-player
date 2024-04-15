@@ -1,4 +1,4 @@
-# audio-player
+# Audio Player
 ### Live Site: https://geraldandrews.github.io/audio-player/
 
 ### Project Description: Personal
